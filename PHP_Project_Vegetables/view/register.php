@@ -1,9 +1,9 @@
 
 <?php
 
-echo "<pre>";
-print_r($_REQUEST);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_REQUEST);
+// echo "</pre>";
 
 
 ?>
@@ -69,12 +69,12 @@ if (isset($_REQUEST['Submit'])) {
       <form method="post" autocomplete="on">
         <!--First name-->
     		<div class="box">
-          <label for="firstName" class="fl fontLabel"> First Name: </label>
+          <label for="firstName"  class="fl fontLabel"> Full Name: </label>
     			<div class="new iconBox">
             <i class="fa fa-user" aria-hidden="true"></i>
           </div>
     			<div class="fr">
-    					<input type="text" name="firstName" placeholder="First Name"
+    					<input type="text" name="full_name" placeholder="Full Name"
               class="textBox" autofocus="on" required>
     			</div>
     			<div class="clr"></div>
@@ -84,11 +84,10 @@ if (isset($_REQUEST['Submit'])) {
 
         <!--Second name-->
     		<div class="box">
-          <label for="secondName" class="fl fontLabel"> Seconed Name: </label>
+          <label for="UserName" class="fl fontLabel"> User Name: </label>
     			<div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
     			<div class="fr">
-    					<input type="text" required name="secondName"
-              placeholder="Last Name" class="textBox">
+    					<input type="text" required name="user_name" placeholder="User Name" class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -100,7 +99,7 @@ if (isset($_REQUEST['Submit'])) {
           <label for="phone" class="fl fontLabel"> Phone No.: </label>
     			<div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
     			<div class="fr">
-    					<input type="text" required name="phoneNo" maxlength="10" placeholder="Phone No." class="textBox">
+    					<input type="text" required name="phone_no" maxlength="10" placeholder="Phone No." class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -112,7 +111,7 @@ if (isset($_REQUEST['Submit'])) {
           <label for="email" class="fl fontLabel"> Email ID: </label>
     			<div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
     			<div class="fr">
-    					<input type="email" required name="email" placeholder="Email Id" class="textBox">
+    					<input type="email" required name="email_id" placeholder="Email Id" class="textBox">
     			</div>
     			<div class="clr"></div>
     		</div>
@@ -130,29 +129,29 @@ if (isset($_REQUEST['Submit'])) {
     		</div>
     		<!---Password---->
 
-    		<!---Gender----->
+    		<!-- -Gender---
     		<div class="box radio">
           <label for="gender" class="fl fontLabel"> Gender: </label>
     				<input type="radio" name="Gender" value="Male" required> Male &nbsp; &nbsp; &nbsp; &nbsp;
     				<input type="radio" name="Gender" value="Female" required> Female
-    		</div>
+    		</div> -->
     		<!---Gender--->
 
 
-    		<!--Terms and Conditions------>
-    		<div class="box terms">
+    		<!-- Terms and Conditions------>
+    		<!-- <div class="box terms">
     				<input type="checkbox" name="Terms" required> &nbsp; I accept the terms and conditions
-    		</div>
-    		<!--Terms and Conditions------>
+    		</div> -->
+    		<!--Terms and Conditions---- -->
 
 
 
     		<!---Submit Button------>
     		<div class="box" style="background: #2d3e3f">
-    				<input type="Submit" name="Submit" class="submit" value="SUBMIT">
+    				<input type="Submit" name="register" class="submit" value="SUBMIT">
     		</div>
     		<!---Submit Button----->
-            <h6>Already have an account? <a href="view/login.php">Login now</a></h6>
+            <h6>Already have an account? <a href="login">Login now</a></h6>
       </form>
   </div>
   <!--Body of Form ends--->

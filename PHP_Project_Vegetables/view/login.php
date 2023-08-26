@@ -21,7 +21,7 @@
                     <button class="opacity">SUBMIT</button>
                 </form>
                 <div class="register-forget opacity">
-                    <a href="/view/register.php">REGISTER</a>
+                    <a href="register">REGISTER</a>
                     <a href="">FORGOT PASSWORD</a>
                 </div>
             </div>

@@ -39,7 +39,7 @@
             <a href="#">Don't have an account?</a>
           </div>
           <div class="Sign up">
-            <a href="signup.php" target="_blank" >Sign up</a>
+            <a href="register.php" target="_blank" >Sign up</a>
           </div>
 
 
@@ -51,21 +51,6 @@
       </div>
     </div>
 
-    <script>
-      const pass_field = document.querySelector('.pass-key');
-      const showBtn = document.querySelector('.show');
-      showBtn.addEventListener('click', function(){
-       if(pass_field.type === "password"){
-         pass_field.type = "text";
-         showBtn.textContent = "HIDE";
-         showBtn.style.color = "#3498db";
-       }else{
-         pass_field.type = "password";
-         showBtn.textContent = "SHOW";
-         showBtn.style.color = "#222";
-       }
-      });
-    </script>
 
 
   </body>
@@ -80,7 +65,7 @@
   user-select: none;
 }
 .bg-img{
-  background: url('Faculty.jpg');
+  background: url('/view/Faculty.jpg');
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -232,3 +217,19 @@ i span{
 }
 
 </style>
+
+<script>
+  const pass_field = document.querySelector('.pass-key');
+  const showBtn = document.querySelector('.show');
+  showBtn.addEventListener('click', function(){
+   if(pass_field.type === "password"){
+     pass_field.type = "text";
+     showBtn.textContent = "HIDE";
+     showBtn.style.color = "#3498db";
+   }else{
+     pass_field.type = "password";
+     showBtn.textContent = "SHOW";
+     showBtn.style.color = "#222";
+   }
+  });
+</script>

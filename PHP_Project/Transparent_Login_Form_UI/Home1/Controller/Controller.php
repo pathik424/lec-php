@@ -1,13 +1,13 @@
 <?php
 
-
 // echo "<pre>";
-// print_r($_SERVER);
+// print_r($_REQUEST);
 // echo "</pre>";
 
 
+require_once ("model/model.php");
 
-class controller
+class controller extends model
 
 {
     public $baseurl = "http://localhost/lec-php/PHP_Project/Transparent_Login_Form_UI/Home1/assets/";  
@@ -15,6 +15,8 @@ class controller
     public function __construct()
 
     {
+
+        parent::__construct();
         if(isset($_SERVER['PATH_INFO']))
         {
             // echo "inside if";
@@ -51,8 +53,8 @@ class controller
                 require_once("view/footer.php"); 
                 break;
 
-            case "/404":
-                require_once("view/header.php"); 
+                case "/404":
+                    require_once("view/header.php"); 
                 require_once("view/404.php"); 
                 require_once("view/footer.php"); 
                 break;
@@ -63,20 +65,32 @@ class controller
                 require_once("view/footer.php"); 
                 break;
 
-            case "/signup":
-                 require_once("view/header.php"); 
-                 require_once("view/signup.php"); 
-                 require_once("view/footer.php"); 
+            case "/register":
+                //  require_once("view/header.php");
+                if(isset($_REQUEST['register']))
+                {
+                    $data = $_REQUEST;
+                    $this->register($data);
+                    
+                     echo "<pre>";
+                     print_r($_REQUEST);
+                     echo "</pre>";
+                }
+                
+                
+                 require_once("view/register.php"); 
+                //  require_once("view/footer.php"); 
                  break;  
 
              case "/login":
-                 require_once("view/header.php"); 
+                //  require_once("view/header.php"); 
                  require_once("view/login.php"); 
-                 require_once("view/footer.php"); 
-                 break;      
+                //  require_once("view/footer.php"); 
+            //      break;      
                         
             }
         }
+
         else {
             echo "Inside else";
             header("location:home");
@@ -84,7 +98,9 @@ class controller
     }
     
 }
+
 $obj = new controller;
+
 
 ?>
 

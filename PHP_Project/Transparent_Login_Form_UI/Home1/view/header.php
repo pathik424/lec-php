@@ -65,9 +65,16 @@
                     </div>
                 </div>
                 <a href="contact" class="nav-item nav-link">Contact</a>
-                <a href="signup" class="nav-item nav-link">Signup</a>
-                <a href="login" class="nav-item nav-link">login</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Join Now</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="register" class="dropdown-item">Register</a>
+                        <a href="login" class="dropdown-item">Login</a>
+                    </div>
+                </div>
+                <!-- <a href="register" class="nav-item nav-link">Register</a> -->
+                <!-- <a href="view/login.php" class="nav-item nav-link">login</a> -->
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>
     </nav>

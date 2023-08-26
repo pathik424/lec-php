@@ -80,8 +80,8 @@
                         </div>
                     </div> -->
                     <a href="contact" class="nav-item nav-link">Contact Us</a>
-                    <a href="view/register.php" class="nav-item nav-link">Register us</a>
-                    <a href="view/login.php" class="nav-item nav-link">Login</a>
+                    <a href="register" class="nav-item nav-link">Register us</a>
+                    <a href="view/l" class="nav-item nav-link">Login</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
