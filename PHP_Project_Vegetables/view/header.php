@@ -69,7 +69,7 @@
                     <a href="products" class="nav-item nav-link">Products</a>
                     <a href="blog" class="nav-item nav-link">Blog Grid</a>
                     <a href="features" class="nav-item nav-link">Our Features</a>
-                    <a href="testimonial" class="nav-item nav-link">Testimonial</a>
+                    <!-- <a href="testimonial" class="nav-item nav-link">Testimonial</a> -->
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
@@ -81,7 +81,8 @@
                     </div> -->
                     <a href="contact" class="nav-item nav-link">Contact Us</a>
                     <a href="register" class="nav-item nav-link">Register us</a>
-                    <a href="view/l" class="nav-item nav-link">Login</a>
+                    <a href="login" class="nav-item nav-link">Login</a>
+                    <a href="logout" class="nav-item nav-link">Logout</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">

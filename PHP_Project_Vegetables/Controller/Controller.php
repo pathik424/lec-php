@@ -83,7 +83,10 @@ public $baseurl = "http://localhost/lec-php/PHP_Project_Vegetables/assets/";
                break;
 
                case "/login":
-                  // require_once("view/header.php"); 
+                  // require_once("view/header.php");
+                  // print_r($_REQUEST)
+                  $data = $_REQUEST;
+                  $this->login($data); 
                   require_once("view/login.php"); 
                   // require_once("view/footer.php"); 
                break;
