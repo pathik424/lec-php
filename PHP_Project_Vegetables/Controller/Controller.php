@@ -12,6 +12,7 @@ class controller extends model
 {
 
 public $baseurl = "http://localhost/lec-php/PHP_Project_Vegetables/assets/";
+public $adminurl = "http://localhost/lec-php/PHP_Project_Vegetables/assets/admin/";
     
     public function __construct()
 
@@ -90,6 +91,22 @@ public $baseurl = "http://localhost/lec-php/PHP_Project_Vegetables/assets/";
                   require_once("view/login.php"); 
                   // require_once("view/footer.php"); 
                break;
+
+               case '/admin-dashboard':
+                  require_once("view/admin/adminheader.php");
+                  require_once("view/admin/adminhome.php");
+                  require_once("view/admin/adminfooter.php");
+                  
+                  break;
+
+                  case '/admin-users':
+                  $fetch = $this->select('fruit_register');
+
+                     require_once("view/admin/adminheader.php");
+                     require_once("view/admin/allusers.php");
+                     require_once("view/admin/adminfooter.php");
+                     
+                     break;
 
 
             }

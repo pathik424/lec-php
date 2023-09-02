@@ -87,6 +87,29 @@ class model
 
     }
 
+    public function select($table)
+    {
+
+       $sql = "SELECT * FROM $table";
+       //echo $sql;
+       //exit;
+      $patsql = $this->connection->query($sql);
+      //print_r($patsql);
+      //exit;//
+
+      if($patsql->num_rows > 0)
+      {
+
+        while($data = $patsql->fetch_object())
+        {
+          $datas[] = $data;
+        } 
+        return $datas;
+      }
+
+
+    }
+
 
 
 
