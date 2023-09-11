@@ -25,6 +25,7 @@ public $adminurl = "http://localhost/lec-php/PHP_Project_Petshop/assets/admin/";
             
             
             case '/home': //page connection//
+               $professional = $this->select("professionals");
                 require_once("view/header.php");
                 require_once("view/home.php");
                 require_once("view/footer.php");
@@ -43,6 +44,7 @@ public $adminurl = "http://localhost/lec-php/PHP_Project_Petshop/assets/admin/";
                  break;
 
             case '/product':
+                $products =  $this->select('products');
                  require_once("view/header.php");
                  require_once("view/product.php");
                  require_once("view/footer.php");
@@ -85,35 +87,89 @@ public $adminurl = "http://localhost/lec-php/PHP_Project_Petshop/assets/admin/";
                  break;
 
 
-          case '/admin-dashboard':
+            case '/admin-dashboard':
                  require_once("view/admin/adminheader.php");
                  require_once("view/admin/adminhome.php");
                  require_once("view/admin/adminfooter.php");
                  
                  break;
+             
+                 
+            case '/admin-add-product':
+
+               if(isset($_REQUEST['add']))
+               {
+                    echo "<pre>";
+                    print_r($_REQUEST);
+                    print_r($_FILES);
+                    echo "</pre>";
+
+                    $image = "upload/products/".time().$_FILES['image']["name"];
+                    move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                    
+                    $data =array(
+                    
+                    "description" => $_REQUEST['description'],     
+                    "price" => $_REQUEST['price'],     
+                    "image" => $image     
+
+                    );
+
+
+
+                    $this->insert("products",$data);
+               }
+
+
+               require_once("view/admin/adminheader.php");
+               require_once("view/admin/addproduct.php");
+               require_once("view/admin/adminfooter.php");
+               
+               break;
+
+             case '/admin-products':
+    
+                     $products = $this->select("products");
+                    //  echo "<pre>";
+                    //  print_r($products);
+                    //  echo "</pre>";
+                    //  exit;
+                    if(isset($_REQUEST['delete_btn']))
+                    {
+                         $this->delete("products","$_REQUEST[delete_btn]");
+                    }
+                     
+
+                    require_once("view/admin/adminheader.php");
+                    require_once("view/admin/adminproduct.php");
+                    require_once("view/admin/adminfooter.php");
+                    
+                    break;    
            
-          case '/admin-users':
-               $fetch = $this->select("pet_registration"); // data connect thase database jode admin portel ma show thase
-               // echo "<pre>";
-               // print_r($fetch);
-               // echo "</pre>";
-               // exit;
-               if(isset($_REQUEST['delete_btn']))
+            case '/admin-users':
+             
+                  $fetch = $this->select("pet_registration"); // data connect thase database jode admin portel ma show thase
+                  // echo "<pre>";
+                  // print_r($fetch);
+                 // echo "</pre>";
+                 // exit;
+             
+                 if(isset($_REQUEST['delete_btn']))
                {
                     $this->delete("pet_registration","$_REQUEST[delete_btn]");
                }
 
 
-               require_once("view/admin/adminheader.php");
-                  require_once("view/admin/allusers.php");
-                  require_once("view/admin/adminfooter.php");
+                require_once("view/admin/adminheader.php");
+                require_once("view/admin/allusers.php");
+                require_once("view/admin/adminfooter.php");
                     
-                    break;  
+                break;  
                     
 
-          case '/admin-update': // for update user data
-               if(isset($_REQUEST['update-btn'])) // update-btn allusers ma click kare to
-               {
+            case '/admin-update': // for update user data
+                 if(isset($_REQUEST['update-btn'])) // update-btn allusers ma click kare to
+                 {
                     // echo "<pre>";
                     $response = $this->selectwhere("pet_registration",$_REQUEST["update-btn"]); // data connect karva mate selectwhere qquery in model 
                     // print_r($response);
@@ -123,9 +179,27 @@ public $adminurl = "http://localhost/lec-php/PHP_Project_Petshop/assets/admin/";
                     require_once("view/admin/adminheader.php");
                     require_once("view/admin/updateuser.php");
                     require_once("view/admin/adminfooter.php");     
-               }
-               else if(isset($_REQUEST['update'])) // update user nu click karva mate update button from updateuser form
-               {
+                 }
+                 else if(isset($_REQUEST['update'])) // update user nu click karva mate update button from updateuser form
+                 {  
+                         //    echo "<pre>";
+                         //    print_r($_REQUEST);
+                         //    print_r($_FILES);
+                         //    echo "</pre>"; 
+                         //    exit;
+                    
+                          if($_FILES['image']['error'] == UPLOAD_ERR_OK)
+                              
+                              {  
+                               $image = "upload/".time().$_FILES['image']["name"];
+                               move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                              } 
+                          else
+                               {
+                                   $image = $_REQUEST["old_profile_pic"];
+                               }
+
+
                     // $data e values data ne array ma adjust karyo
                     $data = array(
                          "fullname" => $_REQUEST["fullname"],
@@ -133,30 +207,192 @@ public $adminurl = "http://localhost/lec-php/PHP_Project_Petshop/assets/admin/";
                          "email" => $_REQUEST["email"],
                          "mobile" => $_REQUEST["mobile"],
                          "role_as" => $_REQUEST["role_as"],
-                         "password" => $_REQUEST["password"]
+                         "password" => $_REQUEST["password"],
+                         "image" => $image
                     );
                     $response = $this->update("pet_registration",$data,$_REQUEST['update']); // $id e update button mathi ave che updateuser form
                     // echo $response;
                     header("location:admin-users"); // update par cllick kare etle users ma jase
-               } 
-               else
-               {
+                } 
+                else
+                {
                    header("location:admin-dashbaord");
+                }
+                break;
+             
+             
+             
+            case '/admin-updateproduct': // for update user data
+               if(isset($_REQUEST['update-pr'])) // update-btn allusers ma click kare to
+               {
+               //    echo "<pre>";
+                  $response = $this->selectwhere("products",$_REQUEST["update-pr"]); // data connect karva mate selectwhere qquery in model 
+               //    print_r($response);
+               //    echo "</pre>";
+               //    exit;
+                  
+                  require_once("view/admin/adminheader.php");
+                  require_once("view/admin/updateproduct.php");
+                  require_once("view/admin/adminfooter.php");     
                }
-               break;     
+               else if(isset($_REQUEST['update'])) // update user nu click karva mate update button from updateuser form
+               {  
+                         //  echo "<pre>";
+                         //  print_r($_REQUEST);
+                         //  print_r($_FILES);
+                         //  echo "</pre>"; 
+                         //  exit;
+                  
+                        if($_FILES['image']['error'] == UPLOAD_ERR_OK)
+                            
+                            {  
+                             $image = "upload/products/".time().$_FILES['image']["name"];
+                             move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                            } 
+                        else
+                             {
+                                 $image = $_REQUEST["old_profile_pic"];
+                             }
+
+
+                  // $data e values data ne array ma adjust karyo
+                  $data = array(
+                       "description" => $_REQUEST["description"],
+                       "price" => $_REQUEST["price"],
+                       "image" => $image
+                  );
+                  $response = $this->update("products",$data,$_REQUEST['update']); // $id e update button mathi ave che updateuser form
+                  // echo $response;
+                  header("location:admin-products"); // update par cllick kare etle users ma jase
+              } 
+              else
+              {
+                 header("location:admin-dashbaord");
+              }
+              break;
+
+              
+              
+
+
+              case '/admin-professionals': // for update user data
+                
+               $professional = $this->select("professionals");
+               //  echo "<pre>";
+               //  print_r($products);
+               //  echo "</pre>";
+               //  exit;
+               if(isset($_REQUEST['delete_btn']))
+               {
+                    $this->delete("professionals","$_REQUEST[delete_btn]");
+               }
+                
+
+               require_once("view/admin/adminheader.php");
+               require_once("view/admin/adminallprofessionals.php");
+               require_once("view/admin/adminfooter.php");
+               
+               break;
+           
+           
+               case '/admin-updateprofessional': // for update user data
+                    if(isset($_REQUEST['update-pro'])) // update-btn allusers ma click kare to
+                    {
+                    //    echo "<pre>";
+                       $response = $this->selectwhere("professionals",$_REQUEST["update-pro"]); // data connect karva mate selectwhere qquery in model 
+                    //    print_r($response);
+                    //    echo "</pre>";
+                    //    exit;
+                       
+                       require_once("view/admin/adminheader.php");
+                       require_once("view/admin/adminupdateprofessionals.php");
+                       require_once("view/admin/adminfooter.php");     
+                    }
+                    else if(isset($_REQUEST['update'])) // update user nu click karva mate update button from updateuser form
+                    {  
+                              //  echo "<pre>";
+                              //  print_r($_REQUEST);
+                              //  print_r($_FILES);
+                              //  echo "</pre>"; 
+                              //  exit;
+                       
+                             if($_FILES['image']['error'] == UPLOAD_ERR_OK)
+                                 
+                                 {  
+                                  $image = "upload/professionals/".time().$_FILES['image']["name"];
+                                  move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                                 } 
+                             else
+                                  {
+                                      $image = $_REQUEST["old_profile_pic"];
+                                  }
+     
+     
+                       // $data e values data ne array ma adjust karyo
+                       $data = array(
+                            "designation" => $_REQUEST["designation"],
+                            "name" => $_REQUEST["name"],
+                            "image" => $image
+                       );
+                       $response = $this->update("professionals",$data,$_REQUEST['update']); // $id e update button mathi ave che updateuser form
+                       // echo $response;
+                       header("location:admin-professionals"); // update par cllick kare etle users ma jase
+                   } 
+                   else
+                   {
+                      header("location:admin-dashbaord");
+                   }
+                   break;
+
+
+
+                   case '/admin-add-professor':
+
+                    if(isset($_REQUEST['add']))
+                    {
+                         echo "<pre>";
+                         print_r($_REQUEST);
+                         print_r($_FILES);
+                         echo "</pre>";
+     
+                         $image = "upload/professionals/".time().$_FILES['image']["name"];
+                         move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                         
+                         $data =array(
+                         
+                         "designation" => $_REQUEST['designation'],     
+                         "name" => $_REQUEST['name'],     
+                         "image" => $image     
+     
+                         );
+     
+     
+     
+                         $this->insert("professionals",$data);
+                    }
+     
+     
+                    require_once("view/admin/adminheader.php");
+                    require_once("view/admin/addprofessors.php");
+                    require_once("view/admin/adminfooter.php");
+                    
+                    break;
+     
+
 
 
             case "/register":
-               if(isset($_REQUEST['register']))
-               {
+              
+                 if(isset($_REQUEST['register']))
+                {
                    $data = $_REQUEST; //database jode connectt karva mate model.php//
                    $this->register($data); //database jode connectt karva mate model.php//
-               //     echo "<pre>";
-               //     print_r($_REQUEST);
-               //     echo "</pre>";
-               }
-                 require_once("view/register.php"); 
-                 break;
+                    //     echo "<pre>";
+                    //     print_r($_REQUEST);
+                   //     echo "</pre>";
+                 }
+                  require_once("view/register.php"); 
+                  break;
 
                  case '/login':
                  

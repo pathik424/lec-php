@@ -13,7 +13,7 @@
 <body>
       <div id="container">
          <header>Login Now</header>
-         <form method="post" action="">
+         <form method="post" action="home">
             <fieldset>
                <br/>
              
@@ -45,8 +45,8 @@ html {
 }
 
 body {
-    /* background: url("https://media.istockphoto.com/id/139496979/photo/assortment-of-fruits-and-vegetables-background.jpg?s=1024x1024&w=is&k=20&c=KcFM8yH2vc3SoAIa0CbX2lVuEA61OBgtKFB1Da8um00=") no-repeat center center fixed; */
-    background: url("https://t3.ftcdn.net/jpg/01/91/95/30/360_F_191953033_gehQATeDoh5z6PyRDbeKyBZuS83CjMEF.jpg") no-repeat center center fixed;
+    background: url("https://media.istockphoto.com/id/139496979/photo/assortment-of-fruits-and-vegetables-background.jpg?s=1024x1024&w=is&k=20&c=KcFM8yH2vc3SoAIa0CbX2lVuEA61OBgtKFB1Da8um00=") no-repeat center center fixed;
+    /* background: url("https://t3.ftcdn.net/jpg/01/91/95/30/360_F_191953033_gehQATeDoh5z6PyRDbeKyBZuS83CjMEF.jpg") no-repeat center center fixed; */
     background-size: cover;
     font-family: 'Droid Serif', serif;
 }

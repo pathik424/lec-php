@@ -106,10 +106,66 @@ class model
         } 
         return $datas;
       }
+}
 
+public function delete($tbl,$id)
 
+{
+   $sql = "DELETE FROM $tbl WHERE id = $id";
+
+   $this->connection->query($sql);
+   header("location:$_SERVER[PHP_SELF]");
+
+}
+
+public function selectwhere($tbl,$id)
+
+{
+ $sql = "SELECT * FROM $tbl WHERE id = $id";
+// echo $sql;
+$patsql = $this->connection->query($sql);
+//  exit;
+
+ if($patsql->num_rows > 0)
+    {
+        $data = $patsql->fetch_object();
+        // print_r($data);
+        // exit;
     }
+    else
+    {
+        $data = "something went wrong";
+        // return $data;
+    }
+    return $data;
 
+}
+public function update($tbl,$values,$id)
+{
+   $sql = "UPDATE $tbl SET ";
+
+   
+ foreach($values as $key => $value)  
+ {
+     $sql .= " $key = '$value' , ";
+ }
+ $sql = rtrim($sql," , "); 
+
+ $sql .= " WHERE id = $id";
+
+ $sqlex = $this->connection->query($sql);
+ if($sqlex->num_rows > 0)
+ {
+     $data = "Updated successfully";
+ }
+ else
+ {
+     $data = "Something went wrong";
+    
+ }
+ return $data;
+
+}
 
 
 

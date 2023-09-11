@@ -62,6 +62,8 @@
                     <a href="admin-dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
 
                     <a href="admin-users" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Users</a>
+                    <a href="admin-products" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Products</a>
+                    <a href="admin-professionals" class="nav-item nav-link"><i class="fa fa-user-circle me-2"></i>Professionals</a>
                     </div>
             </nav>
         </div>

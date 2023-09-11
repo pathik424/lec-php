@@ -1,41 +1,45 @@
+
+            
+          
+
 <div class="content-wrapper">
 <div class="container-xxl flex-grow-1 container-p-y">
 <div class="row">
+
+<div class="container-xxl flex-grow-1 container-p-y">
+        <div class="row">
+            <div class="mb-3">
+                <form action="admin-add-product" method="post">
+                    <button class="btn  btn-primary float-end">Add Product</button>
+                </form>
+            </div>
 
 
 <table class="table table-hover table-dark">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Full_Name</th>
-      <th scope="col">User_Name</th>
-      <th scope="col">Email_Id</th>
-      <th scope="col">Mobile_Number</th>
-      <th scope="col">image</th>
-      <th scope="col">Password</th>
-      <th scope="col">Role_as</th>
+      <th scope="col">Descriptions</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
     <?php 
-    if(isset($fetch))
+    if(isset($products))
     {
-        foreach($fetch as $value)
+        foreach($products as $value)
         { ?>
 
         <tr>
          <td><?php echo $value->id ?></td>
-         <td><?php echo $value->fullname ?></td>
-         <td><?php echo $value->username ?></td>
-         <td><?php echo $value->email ?></td>
-         <td><?php echo $value->mobile ?></td>
-         <td><img src="<?php echo $value->image ?>" alt="No Profile Picture Found" height="70" width="70px"></td>
-         <td><?php echo $value->password ?></td>
-         <td><?php echo $value->role_as ?></td>
+         <td><?php echo $value->description ?></td>
+         <td><?php echo $value->price ?></td>
+         <td><img src="<?php echo $value->image ?>" alt="No picture for product" height="70" width="70px"></td>
          <td>
-           <form action="admin-update" method="post" enctype="multipart/form-data">
-              <button class="btn-primary btn-sm" name="update-btn" value="<?php echo $value->id ?>">Update</button>
+           <form action="admin-updateproduct" method="post" enctype="multipart/form-data">
+              <button class="btn-primary btn-sm" name="update-pr" value="<?php echo $value->id ?>">Update</button>
             </form>
               <form action="" method="post">
                 <button type="submit" name="delete_btn" value="<?php echo $value->id ?>" class="mt-2 btn-danger btn-sm">Delete</button>

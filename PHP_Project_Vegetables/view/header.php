@@ -83,6 +83,7 @@
                     <a href="register" class="nav-item nav-link">Register us</a>
                     <a href="login" class="nav-item nav-link">Login</a>
                     <a href="logout" class="nav-item nav-link">Logout</a>
+                    
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
