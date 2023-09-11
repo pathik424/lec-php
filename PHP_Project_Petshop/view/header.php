@@ -67,8 +67,8 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index" class="navbar-brand ms-lg-5">
-            <h1 class="m-0 text-uppercase text-dark" href = "home"><i class="bi bi-shop fs-1 text-primary me-3" ></i>Pet Shop</h1>
+        <a href="home" class="navbar-brand ms-lg-5">
+            <h1 class="m-0 text-uppercase text-dark" ><i class="bi bi-shop fs-1 text-primary me-3" ></i>Pet Shop</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>

@@ -121,31 +121,32 @@
                 <div class="col-lg-4">
                     <div class="bg-light text-center pt-5 mt-lg-5">
                         <h2 class="text-uppercase">Basic</h2>
-                        <h6 class="text-body mb-5">The Best Choice</h6>
+                        <h6 class="text-body mb-5">1-Day Plan</h6>
+
                         <div class="text-center bg-primary p-4 mb-2">
                             <h1 class="display-4 text-white mb-0">
                                 <small class="align-top"
-                                    style="font-size: 22px; line-height: 45px;">$</small>49<small
+                                    style="font-size: 22px; line-height: 45px;">₹</small>799<small
                                     class="align-bottom" style="font-size: 16px; line-height: 40px;">/
-                                    Mo</small>
+                                    Day</small>
                             </h1>
                         </div>
                         <div class="text-center p-4">
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>HTML5 & CSS3</span>
+                                <span>Fully Airconditioned Stay</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Bootstrap v5</span>
+                                <span>Yummy Meals all day along</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Responsive Layout</span>
-                                <i class="bi bi-x fs-4 text-danger"></i>
+                                <span>Dog Walks</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Browsers Compatibility</span>
-                                <i class="bi bi-x fs-4 text-danger"></i>
+                                <span>Pick-up & Drop Extra Charge </span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
                         </div>
@@ -154,31 +155,43 @@
                 <div class="col-lg-4">
                     <div class="bg-light text-center pt-5">
                         <h2 class="text-uppercase">Standard</h2>
-                        <h6 class="text-body mb-5">The Best Choice</h6>
+                        <h6 class="text-body mb-5">7 Days Plan</h6>
                         <div class="text-center bg-dark p-4 mb-2">
                             <h1 class="display-4 text-white mb-0">
                                 <small class="align-top"
-                                    style="font-size: 22px; line-height: 45px;">$</small>99<small
+                                    style="font-size: 22px; line-height: 45px;">₹</small>4,800<small
                                     class="align-bottom" style="font-size: 16px; line-height: 40px;">/
-                                    Mo</small>
+                                    week</small>
                             </h1>
                         </div>
                         <div class="text-center p-4">
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>HTML5 & CSS3</span>
+                                <span>Fully Airconditioned Stay</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Bootstrap v5</span>
+                                <span>Yummy Meals all day along</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Responsive Layout</span>
+                                <span>Dog Walks</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Browsers Compatibility</span>
-                                <i class="bi bi-x fs-4 text-danger"></i>
+                                <span>1 Swimming Session</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>1 Doggy Gym Session</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>1 Grooming Session</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Pick-up & Drop Extra Charge </span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>
                         </div>
@@ -187,30 +200,50 @@
                 <div class="col-lg-4">
                     <div class="bg-light text-center pt-5 mt-lg-5">
                         <h2 class="text-uppercase">Extended</h2>
-                        <h6 class="text-body mb-5">The Best Choice</h6>
+                        <h6 class="text-body mb-5">1 Month Plan</h6>
                         <div class="text-center bg-primary p-4 mb-2">
                             <h1 class="display-4 text-white mb-0">
                                 <small class="align-top"
-                                    style="font-size: 22px; line-height: 45px;">$</small>149<small
+                                    style="font-size: 22px; line-height: 45px;">₹</small>22,000<small
                                     class="align-bottom" style="font-size: 16px; line-height: 40px;">/
-                                    Mo</small>
+                                    Month</small>
                             </h1>
                         </div>
                         <div class="text-center p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>HTML5 & CSS3</span>
+                        <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Fully Airconditioned Stay</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Bootstrap v5</span>
+                                <span>Yummy Meals all day along</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Responsive Layout</span>
+                                <span>Dog Walks</span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-1">
-                                <span>Browsers Compatibility</span>
+                                <span>3 Swimming Session</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>3 Doggy Gym Session</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>3 Grooming Session</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>1 Behavioral Session</span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>1 Wiggles Product Free </span>
+                                <i class="bi bi-check2 fs-4 text-primary"></i>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span>Pick-up & Drop Extra Charge </span>
                                 <i class="bi bi-check2 fs-4 text-primary"></i>
                             </div>
                             <a href="" class="btn btn-primary text-uppercase py-2 px-4 my-3">Order Now</a>

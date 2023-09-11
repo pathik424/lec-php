@@ -385,7 +385,7 @@
                         </div>
                     </div>
                     <div class="bg-light text-center p-4">
-                        <h5 class="text-uppercase"><?php echo $professionals->name ?></h5>
+                        <h5 class="text-uppercase"><?php     echo $professionals->name ?></h5>
                         <p class="m-0"><?php echo $professionals->designation ?></p>
                     </div>
                 </div>
