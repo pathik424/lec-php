@@ -7,22 +7,25 @@
             </div>
             <div class="row g-5">
                 <div class="col-lg-7">
-                    <form>
+                    <form method="post" action="">
                         <div class="row g-3">
                             <div class="col-12">
-                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;">
+                                <input type="text" class="form-control bg-light border-0 px-4" name="name" placeholder="Your Name" style="height: 55px;">
                             </div>
                             <div class="col-12">
-                                <input type="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;">
+                                <input type="email" class="form-control bg-light border-0 px-4" name="email"placeholder="Your Email" style="height: 55px;">
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control bg-light border-0 px-4" placeholder="Subject" style="height: 55px;">
+                                <input type="text" class="form-control bg-light border-0 px-4" name="mobile" placeholder="Your Mobile Number" style="height: 55px;">
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="8" placeholder="Message"></textarea>
+                                <input type="text" class="form-control bg-light border-0 px-4" name="subject" placeholder="Subject" style="height: 55px;">
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                <textarea class="form-control bg-light border-0 px-4 py-3" rows="8" name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit" name="submit" >Send Message</button>
                             </div>
                         </div>
                     </form>

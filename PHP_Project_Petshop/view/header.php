@@ -60,6 +60,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
     <!-- Topbar End -->
@@ -75,7 +76,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="home" class="nav-item nav-link active">Home</a>
+                <a href="home" class="nav-item nav-link ">Home</a>
                 <a href="about" class="nav-item nav-link">About</a>
                 <a href="service" class="nav-item nav-link">Service</a>
                 <a href="product" class="nav-item nav-link">Product</a>
@@ -97,6 +98,7 @@
                         <a href="logout" class="dropdown-item">Logout</a>
                     </div>
                 </div>
+                <a href="cart" class="nav-item nav-link">My Cart</a>
                 <a href="contact" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>

@@ -155,11 +155,14 @@ class model // create class as a file name//
 
                      if($patsql->num_rows > 0) // num_row true or false
                     {
-                         $userdata = $patsql->fetch_object(); //role as set karva mate print r karvu padse
-                            //    echo "<pre>";
-                            //    print_r($userdata);
-                            //    echo "</pre>";
-                            //    echo "login suceess";
+                        $userdata = $patsql->fetch_object(); //role as set karva mate print r karvu padse
+                        //    echo "<pre>";
+                        //    print_r($userdata);
+                        //    echo "</pre>";
+                        //    echo "login suceess";
+
+                        
+                        // $_SESSION['user'] = $username;
 
 
 
@@ -167,13 +170,13 @@ class model // create class as a file name//
                
                             if($userdata->role_as == 1)
                             {
-                                 echo "admin side";
-                                 header("location:admin-dashboard");
+                                echo "admin side";
+                                header("location:admin-dashboard");
                             }
                             else
                             {
-                                 echo "user side";
-                                 header("location:home");
+                                echo "user side";
+                                header("location:home");
                              }
                     }
                      else

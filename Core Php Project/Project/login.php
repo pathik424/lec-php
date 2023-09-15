@@ -6,7 +6,7 @@ print_r($_SESSION);
 echo "</pre>";
 
 if(isset($_SESSION['userinfo']))
-{
+{q
   echo "inside if";
   header("location:home.php");
   exit();
