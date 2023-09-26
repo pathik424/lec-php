@@ -40,8 +40,23 @@ class AuthController extends Controller
 
         $credential =$request->only('email','password'); // only email ane password e adjust karvu hoy to 2 j field rakhavi hoy to request
         // dd($credential);
+
         if(Auth::attempt($credential))
+
         {
+            // dd(Auth::user()); user thi single user no data avse role as pan mali jase ani biji badhi details pan mali jase
+            if(Auth::user())
+            {
+
+            }
+            else if
+            {
+
+            }
+            else
+            {
+
+            }
             return redirect('/home')->with('message','Login Success'); // with thi message show thase success or failed
             // dd('Login Success');
         }
