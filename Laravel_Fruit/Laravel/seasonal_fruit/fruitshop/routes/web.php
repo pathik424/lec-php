@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\frontend\homecontroller as FrontendHomecontroller;
-use App\Http\Controllers\homecontroller;
+use App\Http\Controllers\backend\home\backhomecontroller;
+use App\Http\Controllers\Frontend\home\fronhomecontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route::get('/',[practicecontroller::class,'index']);
-Route::get('/home',[FrontendHomecontroller::class,'index']);
+Route::get('/home',[fronhomecontroller::class,'index']);
 
 Route::get('/register',[AuthController::class,'index'])->middleware('guest'); // middlwear guest thi e thase jyare e login karse tyare e pacho login page ma nai jai sake url change karine
 Route::post('/register',[AuthController::class,'store']);
@@ -32,4 +32,6 @@ Route::post('/register',[AuthController::class,'store']);
 Route::get('/login',[AuthController::class,'login'])->middleware('guest');  // middlwear guest thi e thase jyare e login karse tyare e pacho login page ma nai jai sake url change karine
 Route::post('/login',[AuthController::class,'validate_login']);
 
-Route::get('/logout',[AuthController::class,'logout']);
+Route::get('/logout',[AuthController::class,'logout']); 
+
+Route::get('/admin/dashboard',[backhomecontroller::class,'index']);

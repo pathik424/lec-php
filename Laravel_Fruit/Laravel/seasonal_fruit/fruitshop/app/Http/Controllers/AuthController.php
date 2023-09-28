@@ -10,11 +10,11 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view ('register');
+        return view ('Frontend.register.register');
     }
     public function login()
     {
-        return view ('login');
+        return view ('Frontend.login.login');
     }
 
     public function store(request $request)
@@ -45,19 +45,21 @@ class AuthController extends Controller
 
         {
             // dd(Auth::user()); user thi single user no data avse role as pan mali jase ani biji badhi details pan mali jase
-            if(Auth::user())
+            if(Auth::user()->role_as == 1) // role as as set karyu login karyu to
             {
+                return redirect('/admin/dashboard')->with('message','Login Success'); // with thi message show thase success or failed
 
             }
-            else if
+            else if(Auth::user()->role_as == 0) //  role as as set karyu login karyu to
             {
+                return redirect('/home')->with('message','Login Success'); // with thi message show thase success or failed
 
             }
-            else
+            else //  role as as set karyu login karyu to
             {
+                return redirect('/home')->with('message','Login Success'); // with thi message show thase success or failed
 
             }
-            return redirect('/home')->with('message','Login Success'); // with thi message show thase success or failed
             // dd('Login Success');
         }
         else
