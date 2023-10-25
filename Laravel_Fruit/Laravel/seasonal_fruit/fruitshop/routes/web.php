@@ -29,9 +29,14 @@ Route::get('/register',[AuthController::class,'index'])->middleware('guest'); //
 Route::post('/register',[AuthController::class,'store']);
 // Route::get('/home',[\App\Http\Controllers\frontend\homecontroller::class,'index']);
 
+// login
 Route::get('/login',[AuthController::class,'login'])->middleware('guest');  // middlwear guest thi e thase jyare e login karse tyare e pacho login page ma nai jai sake url change karine
 Route::post('/login',[AuthController::class,'validate_login']);
 
-Route::get('/logout',[AuthController::class,'logout']); 
+// logout
+Route::get('/logout',[AuthController::class,'logout']);
 
-Route::get('/admin/dashboard',[backhomecontroller::class,'index']);
+//admin
+Route::get('/admin/dashboard',[backhomecontroller::class,'index'])->middleware(['auth','adminmiddleware']); // ama 2 middleware nakhya che 1st auth middleaare e login che ke nai e check karse 2nd admin middleware e check karse ke e role as same che ke nai
+
+

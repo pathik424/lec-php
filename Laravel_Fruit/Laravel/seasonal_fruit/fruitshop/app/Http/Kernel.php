@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\adminmiddleware;
+use App\Http\Middleware\usermiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -64,5 +66,7 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'adminmiddleware' => adminmiddleware::class, // a file add karvi pades adminmiddleware folder add karvu padse pachi class new middleware banava mate
+        'usermiddleware' => usermiddleware::class, // a file add karvi pades adminmiddleware folder add karvu padse pachi class new middleware banava mate
     ];
 }

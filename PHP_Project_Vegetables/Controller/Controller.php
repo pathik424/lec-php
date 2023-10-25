@@ -39,6 +39,9 @@ public $adminurl = "http://localhost/lec-php/PHP_Project_Vegetables/assets/admin
                 break;
 
                 case "/products":
+
+                  $products =  $this->select('products');
+
                    require_once("view/header.php"); 
                    require_once("view/products.php"); 
                    require_once("view/footer.php"); 
@@ -146,6 +149,185 @@ public $adminurl = "http://localhost/lec-php/PHP_Project_Vegetables/assets/admin
                    header("location:admin-dashbaord");
                }
    break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+   case '/admin-add-product':
+
+      if(isset($_REQUEST['add']))
+      {
+           echo "<pre>";
+           print_r($_REQUEST);
+           print_r($_FILES);
+           echo "</pre>";
+
+           $image = "upload/products/".time().$_FILES['image']["name"];
+           move_uploaded_file($_FILES['image']['tmp_name'],$image);
+           
+           $data =array(
+           
+           "description" => $_REQUEST['description'],     
+           "price" => $_REQUEST['price'],     
+           "image" => $image     
+
+           );
+
+
+
+           $this->insert("products",$data);
+      }
+
+
+      require_once("view/admin/adminheader.php");
+      require_once("view/admin/addproduct.php");
+      require_once("view/admin/adminfooter.php");
+      
+      break;
+
+    case '/admin-products':
+
+            $products = $this->select("products");
+           //  echo "<pre>";
+           //  print_r($products);
+           //  echo "</pre>";
+           //  exit;
+           if(isset($_REQUEST['delete_btn']))
+           {
+                $this->delete("products","$_REQUEST[delete_btn]");
+           }
+            
+
+           require_once("view/admin/adminheader.php");
+           require_once("view/admin/adminproduct.php");
+           require_once("view/admin/adminfooter.php");
+           
+           break;
+
+
+// ____________PRODUCT
+
+           case '/admin-add-veg':
+
+                if(isset($_REQUEST['add']))
+                {
+                     // echo "<pre>";
+                     // print_r($_REQUEST);
+                     // print_r($_FILES);
+                     // echo "</pre>";
+ 
+                     $image = "upload/product/".time().$_FILES['image']["name"];
+                     move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                     
+                     $data =array(
+                     
+                     "description" => $_REQUEST['description'],     
+                     "price" => $_REQUEST['price'],     
+                     "image" => $image     
+ 
+                     );
+ 
+ 
+ 
+                     $this->insert("products",$data);
+                }
+ 
+ 
+                require_once("view/admin/adminheader.php");
+                require_once("view/admin/addproduct.php");
+                require_once("view/admin/adminfooter.php");
+                
+                break;
+ 
+              case '/admin-product':
+     
+                      $treat = $this->select("products");
+                     //  echo "<pre>";
+                     //  print_r($products);
+                     //  echo "</pre>";
+                     //  exit;
+                     if(isset($_REQUEST['delete_btn']))
+                     {
+                          $this->delete("products","$_REQUEST[delete_btn]");
+                     }
+                      
+ 
+                     require_once("view/admin/adminheader.php");
+                     require_once("view/admin/adminproduct.php");
+                     require_once("view/admin/adminfooter.php");
+                     
+                     break;
+
+                     case '/admin-updateproduct': // for update user data
+                          if(isset($_REQUEST['update-tr'])) // update-btn allusers ma click kare to
+                          {
+                          //    echo "<pre>";
+                             $response = $this->selectwhere("products",$_REQUEST["update-tr"]); // data connect karva mate selectwhere qquery in model 
+                          //    print_r($response);
+                          //    echo "</pre>";
+                          //    exit;
+                             
+                             require_once("view/admin/adminheader.php");
+                             require_once("view/admin/updateproduct.php");
+                             require_once("view/admin/adminfooter.php");     
+                          }
+                          else if(isset($_REQUEST['update'])) // update user nu click karva mate update button from updateuser form
+                          {  
+                                    //  echo "<pre>";
+                                    //  print_r($_REQUEST);
+                                    //  print_r($_FILES);
+                                    //  echo "</pre>"; 
+                                    //  exit;
+                             
+                                   if($_FILES['image']['error'] == UPLOAD_ERR_OK)
+                                       
+                                       {  
+                                        $image = "upload/products/".time().$_FILES['image']["name"];
+                                        move_uploaded_file($_FILES['image']['tmp_name'],$image);
+                                       } 
+                                   else
+                                        {
+                                            $image = $_REQUEST["old_profile_pic"];
+                                        }
+           
+           
+                             // $data e values data ne array ma adjust karyo
+                             $data = array(
+                                  "description" => $_REQUEST["description"],
+                                  "price" => $_REQUEST["price"],
+                                  "image" => $image
+                             );
+                             $response = $this->update("products",$data,$_REQUEST['update']); // $id e update button mathi ave che updateuser form
+                             // echo $response;
+                             header("location:admin-product"); // update par cllick kare etle users ma jase
+                         } 
+                         else
+                         {
+                            header("location:admin-dashboard");
+                         }
+                         break;
       
 
                   
